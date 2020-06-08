@@ -23,9 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '%@-=$g!k4t_9v#c#%5l#fl$b3z1k_9xxbw@x@&px6o92#9_^6r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+# 밑에 도메인을 넣어주면 된다. *은 어느곳에서든 접근이 가능함.
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -122,6 +123,8 @@ USE_TZ = True
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
+# 배포 환경에서는 stitc root가 있어야 한다. (staic 파일들을 빠르게 서빙(?)할 수 있다.)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 LOGIN_REDIRECT_URL = '/'
